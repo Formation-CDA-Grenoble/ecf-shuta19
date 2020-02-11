@@ -70,11 +70,12 @@ Comme personne n'est parfait, il n'est pas exclu que cet examen contienne des co
 
 - A combien de types d'utilisateurs le projet s'adresse-t-il? Nommez chacun de ces types.
 
-> _Ma réponse:_
+>chapitre , livre , tag donc s'adress 3 types diferrent utilisateur
+
 
 - Combien d'applications faudra-t-il créer et quel sera le type de chacun d'entre elle?
 
-> _Ma réponse:_
+> il faudra 1 application à creer 
 
 - Quelles sont les fonctionnalités principales du projet? Listez-les par ordre de priorité (de la plus importante à la moins importante).
 
@@ -99,11 +100,11 @@ Inclure votre production dans le dépôt Git, ou le **lien de partage** du table
 
 - Combien de pages sont-elles nécessaires, à votre avis, pour répondre aux spécifications fonctionnelles définies ci-dessus?
 
-> _Ma réponse:_
+> il faudra  16 page à mon avis 
 
 - A quoi le plan du site ressemblera-t-il? Quelle page permettra de passer à quelle autre?
 
-> _Ma réponse:_
+> par example en est a book en veut passe a livre et en fait a chaque une de page suivant
 
 #### 💻 Travail à réaliser
 
@@ -130,12 +131,35 @@ Réaliser des maquettes (incluant couleurs, fontes, et autres éléments de desi
 - Choisiriez-vous plutôt une base de données de type SQL, ou NoSQL pour ce projet? Justifiez votre choix.
 
 > _Ma réponse:_
+je choisi sql  parce que il est facile a ecrir de requete  
+
+
+Les bases de données SQL (Structured Query Language) existent depuis plus de quatre décennies. L’utilisation a explosé à la fin des années 1990 avec l’augmentation des applications Web et des solutions open source telles que MySQL, PostgreSQL et SQLite.
+Même si les bases de données NoSQL existent depuis les années 1960, elles n’ont que récemment pris de l’ampleur avec l’arrivée des solutions telles que MongoDB, CouchBase, Redis et Apache Cassandra. L’acronyme « noSQL » a deux interprétations qui ne sont pas aujourd’hui tranchées :
+Pour les uns il s’agit de « No SQL » c’est-à-dire l’utilisation d’un autre langage de requête et affirmant au passage la possible fin d’un cycle où le SQL était tout puissant
+Pour les autres, il s’agit de « Not Only SQL » c’est-à-dire l’utilisation combinée de SQL avec d’autre mécanismes de recherche d’information
+Quoi qu’il en soit, aujourd’hui le débat entre Sql/noSql déchaîne les passions et tourne parfois à la guerre sainte ! Avant d’aller plus loin, dissipons un certain nombre de mythes.
+Mythe N°1 : noSQL remplacera SQL
+Ben voyons !… Ce serait comme dire que les bateaux ont été remplacés par les voitures parce qu’elles étaient d’une technologie plus récente. SQL et NoSQL font la même chose : stocker des données, mais ils le font chacun à leur manière avec des approches bien différentes. Le choix d’une technologie BD est crucial pour un projet et peut soit le booster ou l’entraver. Le NoSQL ne remplace pas le SQL, c’est juste une alternative.
+Mythe N°2 : NoSQL est meilleur que SQL, et … réciproquement !
+Certains projets sont mieux adaptés à l’utilisation d’une base de données SQL. Certains sont mieux adaptés à NoSQL. Et certains pourraient même les utiliser soit de façon interchangeable. On ne peut donc appliquer de façon uniforme un même « parti pris technologique » sur tous les projets.
+Mythe N°3 : SQL et NoSQL sont clairement des technos diamétralement opposées
+Ce n’est pas forcément vrai. Certaines bases de données SQL adoptent les fonctionnalités NoSQL et vice versa. Les choix risquent de devenir de plus en plus floues, et les bases de données hybrides telle que NewSQL pourraient offrir des options intéressantes à l’avenir.
+Mythe N°4 : La base de données dépend du langage et environnement de développement
+Il est vrai que nous nous sommes habitués aux « bundles technologiques », véritables offres groupées telles que : LAMP/WAMP (Linux/Windows, Apache, MySQL, PHP), MEAN (MongoDB -NoSQL-, Express, Angular, Node.js), .NET (IIS, C#/VB et SQL Server) Java (avec Apache et Oracle), …
+Il existe bien sûr des raisons pratiques, historiques et commerciales pour lesquelles ces piles technologiques existent et continuent d’évoluer. Mais elles ne présument pas qu’elles sont des règles immuables. Vous pouvez utiliser une base de données MongoDB NoSQL dans votre projet PHP, .NET., Java ou ColdFusion. Vous pouvez vous connecter à MySQL ou SQL Server avec Node.js. Bref, ne laisser pas les habitudes dicter le type de base de données dont votre projet a besoin.
+Les différences
+
+
+
+
+
 
 - Combien d'entités sont-elles nécessaires pour ce projet, et que représenterait chacune d'entre elles? Quelles propriétés pourraient-elles avoir?
 
 > _Ma réponse:_
 
-- Quelles relations envisageriez-vous entre ces entités? Précisez pour chaque relation: One-to-one, One-to-many, Many-to-many, composition ou aggrégation.
+-il faudra 1 - 3 ou 4 entites je croix  il est nécessaires pour ce project 
 
 > _Ma réponse:_
 
@@ -175,15 +199,18 @@ Ecrivez vous-mêmes le code nécessaire à la migration de votre schéma au lieu
 
 - Combien d'entités envisagez-vous de créer et pourquoi? Combien de contrôleurs envisagez-vous de créer et pourquoi?
 
+
 > _Ma réponse:_
 
 - Un CRUD suffira-t-il pour chacune des entités, ou y a-t-il des entités pour lesquelles il faudra définir de la logique spécifique?
 
-> _Ma réponse:_
+Toutes requêtes  Entities ou utilisant le générateur de requête s'appuient sur une couche appelée "Object Services". Cette couche logique permet de gérer les opérations de type CRUD sur les entités, de suivre les modifications des objets, de gérer l'accès concurrentiel et permet la liaison des entités avec des contrôles d'interface (data binding). Dans un sens, elle matérialise le résultat des requêtes en entités, et dans l'autre, elle transforme les requêtes émises en arbres d'expression vers une couche plus basse appelée "EntityClient".
+
+La couche "Object Services" est principalement matérialisée par la classe "ObjectContext". Celle-ci est d'ailleurs dérivée lors de la génération des entités en classes. L'outil "EdmGen.exe" fourni par le framework .Net 3.5 génère en plus des entités définies dans le schéma conceptuel (CSDL) une classe appelée communément le contexte, qui dérive de "ObjectContext". Celle-ci est utilisée pour ouvrir la connexion, requêter, mettre à jour la base de données et bien plus. Tout comme les classes d'entité, la classe de contexte est elle aussi partielle, ce qui permet de l'enrichir fonctionnellement. Voici un exemple ouvrant une connexion et effectuant une requête de type SELECT :
 
 - Quelles sont les relations entre les entités, et comment allez-vous les matérialiser dans votre API?
 
-> _Ma réponse:_
+> je creer 1 base de donnée avec les entités suivant  nom de l'author librairie  et nom de client  adresse de client aussi client il pouve achete  de livre
 
 #### 💻 Travail à réaliser
 
@@ -239,7 +266,7 @@ Vous pouvez, pour ce faire, utiliser le squelette d'application existant dans le
 
 - Si un administateur modifie un contenu, la modification sera-t-elle visible immédiatement dans l'interface utilisateur? Si non, que faudrait-il faire pour la voir apapraître?
 
-> _Ma réponse:_
+> ba se sur si un administateur modifie un contenu il serra visible immédiatement
 
 #### 💻 Travail à réaliser
 
@@ -265,3 +292,6 @@ Vous pouvez, pour ce faire, utiliser le squelette d'application existant dans le
 Ecrivez une documentation succincte de votre travail. La documentation doit expliquer comment on peut installer et lancer les différentes applications, ainsi que les différents endpoints de votre API.
 
 Inclure votre production dans votre dépôt.
+
+
+en telecharger de nos logiciel et apres en install quand il va termine l'instalation en lance l'aplication
